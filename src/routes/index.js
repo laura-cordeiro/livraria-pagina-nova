@@ -1,6 +1,6 @@
 const express = require("express"),
   routes = express.Router(),
-  BookController = require("../controllers/bookcontroller");
+  BookController = require("../domain/books/controllers/bookController");
 
 routes.post("/book", BookController.create);
 
