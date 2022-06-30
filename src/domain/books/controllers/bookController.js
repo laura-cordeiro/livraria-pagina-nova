@@ -1,6 +1,11 @@
+const { Books } = require("../models");
+
 const BookController = {
   async create(req, res) {
-    res.send("oi");
+    const newBook = await Books.create({
+      ...req.body
+    });
+    return res.status(201).json(newBook);
   }
 };
 
