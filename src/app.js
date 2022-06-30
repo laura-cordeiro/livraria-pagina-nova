@@ -1,9 +1,12 @@
 const express = require("express"),
   routes = require("./routes"),
   db = require("./database"),
+  upload = require("./config/upload"),
   app = express();
 
 app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
+app.use(upload.any());
 db.hasConnection();
 app.use(routes);
 
