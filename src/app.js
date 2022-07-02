@@ -7,6 +7,7 @@ const express = require("express"),
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(upload.any());
+app.use(express.static("src/public"));
 db.hasConnection();
 app.use(routes);
 
